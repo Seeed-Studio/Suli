@@ -1,4 +1,4 @@
-#What is Suly
+What is Suly
 -----------------
 Sounds like a girl’s name. Actually it means Seeed Unified Library Interface. It’s our big thing to do in the near future. 
 
@@ -13,7 +13,7 @@ So, what I think is that if there's a way can make our libraries to fit all plat
 
 
 <br>
-#How does Suly works
+How does Suly works
 ---------------------------
 Have a look at the following image,
 
@@ -97,7 +97,7 @@ You can find that Suli include digital IO operation, analog IO operation, I2C, a
 
 
 <br>
-#What is next
+What is next
 ---------------------------
 Our plan is make all library of Seeed to Suli compatible and porting some common platform Suli, this’s platform will include: Arduino, Mbed, Raspberry, LaunchPad in the first stage. This work may be finished before June. 
 
