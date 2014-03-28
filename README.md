@@ -6,7 +6,7 @@ We have hundreds of sensors, actuators, displays and the other useful module. In
 
 Thus sometime we will get some trouble, some customer will ask us to supply some library for a non-Arduino platform, What we can do is telling them, hey man, we have Arduino library only. Every time I talk about this I feel shame. 
 
-So, what I think is that if there's a way can make our libraries to fit all platform. It’s really a hard job. But so luchy that we find it out funally, it's Suli - Seeed Unified Library Interface, which can make all of(at least 90%) our library fit many common platform, or at least make it easy to porting. 
+So, what I think is that if there's a way can make our libraries to fit all platform. It’s really a hard job. But so lucky that we find it out finally, it's Suli - Seeed Unified Library Interface, which can make all of(at least 90%) our library fit many common platform, or at least make it easy to porting. 
 
 
 
