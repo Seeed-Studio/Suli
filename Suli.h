@@ -48,7 +48,6 @@ typedef int ANALOG_T;                               // pin analog
  */
 #define HAL_PIN_INPUT   INPUT                       // INPUT and OUTPUT was declared in Arduino IDE
 #define HAL_PIN_OUTPUT  OUTPUT
-#define HAL_PIN_PULLUP  0x2
 
 
 /**
@@ -87,9 +86,9 @@ int16 seeed_hal_pin_read(IO_T *pio);                // read pin
  * then waits for the pin to go LOW and stops timing. Returns the length of the pulse in microseconds. 
  * Gives up and returns 0 if no pulse starts within a specified time out.
  * para -
- * pin: pins which you want to read the pulse.
- * state: type of pulse to read: either HIGH or LOW. (int)
- * timeout (optional): the number of microseconds to wait for the pulse to start; default is one second (unsigned long)
+ * - pin: pins which you want to read the pulse.
+ * - state: type of pulse to read: either HIGH or LOW. (int)
+ * - timeout (optional): the number of microseconds to wait for the pulse to start; default is one second (unsigned long)
  */
 uint16 seeed_hal_pulse_in(IO_T *pio, uint8 state, uint32 timeout);
 
@@ -135,7 +134,7 @@ void seeed_hal_i2c_init(void * i2c_device);
 
 /*
  * write a buff to I2C
-*/
+ */
 uint8 seeed_hal_i2c_write(void * i2c_device, uint8 dev_addr, uint8 *data, uint8 len);
 
 /*
