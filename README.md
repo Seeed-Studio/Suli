@@ -29,14 +29,14 @@ Thres are serval points about Suli:
 
 Suli has two files, Suli.h and Suli.cpp(.c). And Suli should implement the following function,
 
-GPIO type:
+**GPIO type:**
 
 	typedef     int     IO_T;                           // IO type
 	typedef     int     PIN_T;                          // pin name
 	typedef     int     DIR_T;                          // pin direction
 	typedef int ANALOG_T;                               // pin analog
 
-GPIO state:
+**GPIO state:**
 
 	#define HAL_PIN_INPUT   INPUT          // INPUT and OUTPUT was declared in Arduino IDE
 	#define HAL_PIN_OUTPUT  OUTPUT
@@ -44,7 +44,7 @@ GPIO state:
 	#define HAL_PIN_LOW     LOW
 
 
-Data type:
+**Data type:**
 
 	typedef signed char     int8;
 	typedef unsigned char   uint8;
@@ -53,7 +53,7 @@ Data type:
 	typedef signed long     int32;
 	typedef unsigned long   uint32;
 
-Digital IO Operation:
+**Digital IO Operation:**
 
 	void seeed_hal_pin_init(IO_T *pio, PIN_T pin);      // pin initialize
 	void seeed_hal_pin_dir(IO_T *pio, DIR_T dir);       // set pin direction
@@ -61,28 +61,28 @@ Digital IO Operation:
 	int16 seeed_hal_pin_read(IO_T *pio);                // read pin
 	uint16 seeed_hal_pulse_in(IO_T *pio, uint8 state, uint32 timeout);
 
-Analog IO Operation:
+**Analog IO Operation:**
 
 	void seeed_hal_analog_init(ANALOG_T * aio, PIN_T pin);
 	int16 seeed_hal_analog_read(ANALOG_T * aio);
 
-Delay
+**Delay:**
 
 	void seeed_hal_delay_us(uint32 us);                 // delay us
 	void seeed_hal_delay_ms(uint32 ms);                 // delay ms
 
-Times
+**Times:**
 
 	uint32 seeed_hal_millis(void);
 	uint32 seeed_hal_micros(void);
 
-I2C Interface:
+**I2C Interface:**
 
 	void seeed_hal_i2c_init(void * i2c_device);
 	uint8 seeed_hal_i2c_write(void * i2c_device, uint8 dev_addr, uint8 *data, uint8 len);
 	uint8 seeed_hal_i2c_read(void * i2c_device, uint8 dev_addr, uint8 *buff, uint8 *len);
 
-UART:
+**UART:**
 
 	void seeed_hal_uart_init(void * uart_device, int16 uart_num, uint32 baud);
 	void seeed_hal_uart_send(void * uart_device, int16 uart_num, uint8 *data, uint16 len);
