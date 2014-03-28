@@ -27,7 +27,7 @@
 #include "Arduino.h"
 #include "Wire.h"
 #include "SoftwareSerial.h"
-#include "seeed_unified_library_interface.h"
+#include "Suli.h"
 
 
 /*
