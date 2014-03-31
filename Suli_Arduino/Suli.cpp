@@ -35,7 +35,7 @@
  * *pio - IO
  * pin - pin name
  */
-void seeed_hal_pin_init(IO_T *pio, PIN_T pin)
+void suli_pin_init(IO_T *pio, PIN_T pin)
 {
     *pio = pin;
 }
@@ -45,7 +45,7 @@ void seeed_hal_pin_init(IO_T *pio, PIN_T pin)
  * - pio: IO device pointer
  * - dir: INPUT or OUTPUT
  */
-void seeed_hal_pin_dir(IO_T *pio, DIR_T dir)
+void suli_pin_dir(IO_T *pio, DIR_T dir)
 {
     pinMode(*pio, dir);
 }
@@ -56,7 +56,7 @@ void seeed_hal_pin_dir(IO_T *pio, DIR_T dir)
  * - pio: IO device pointer
  * - state: HIGH or LOW
  */
-void seeed_hal_pin_write(IO_T *pio, int16 state)
+void suli_pin_write(IO_T *pio, int16 state)
 {
     digitalWrite(*pio, state);
 }
@@ -67,7 +67,7 @@ void seeed_hal_pin_write(IO_T *pio, int16 state)
  * - pio: IO device pointer
  * return HIGH or LOW
  */
-int16 seeed_hal_pin_read(IO_T *pio)
+int16 suli_pin_read(IO_T *pio)
 {
     return digitalRead(*pio);
 }
@@ -75,7 +75,7 @@ int16 seeed_hal_pin_read(IO_T *pio)
 
 /**
  * Reads a pulse (either HIGH or LOW) on a pin. For example, if value is HIGH, 
- * seeed_hal_pulse_in() waits for the pin to go HIGH, starts timing, 
+ * suli_pulse_in() waits for the pin to go HIGH, starts timing, 
  * then waits for the pin to go LOW and stops timing. Returns the length of the pulse in microseconds. 
  * Gives up and returns 0 if no pulse starts within a specified time out.
  * para -
@@ -83,7 +83,7 @@ int16 seeed_hal_pin_read(IO_T *pio)
  * state: type of pulse to read: either HIGH or LOW. (int)
  * timeout (optional): the number of microseconds to wait for the pulse to start; default is one second (unsigned long)
  */
-uint16 seeed_hal_pulse_in(uint8 pin, uint8 state, uint32 timeout)
+uint16 suli_pulse_in(uint8 pin, uint8 state, uint32 timeout)
 {
     return 0;
 }
@@ -94,7 +94,7 @@ uint16 seeed_hal_pulse_in(uint8 pin, uint8 state, uint32 timeout)
  * - aio: gpio device pointer
  * - pin: pin name
  */
-void seeed_hal_analog_init(ANALOG_T * aio, PIN_T pin)
+void suli_analog_init(ANALOG_T * aio, PIN_T pin)
 {
     *aio = pin;
 }
@@ -105,7 +105,7 @@ void seeed_hal_analog_init(ANALOG_T * aio, PIN_T pin)
  * As usually, 10bit ADC is enough, to increase the compatibility, will use only 10bit.
  * if if your ADC is 12bit, you need to >>2, or your ADC is 8Bit, you need to <<2
  */
-int16 seeed_hal_analog_read(ANALOG_T * aio)
+int16 suli_analog_read(ANALOG_T * aio)
 {
     return analogRead(*aio);
 }
@@ -114,7 +114,7 @@ int16 seeed_hal_analog_read(ANALOG_T * aio)
 /*
  * delay us
  */
-void seeed_hal_delay_us(uint32 us)
+void suli_delay_us(uint32 us)
 {
     delayMicroseconds(us);
 }
@@ -123,7 +123,7 @@ void seeed_hal_delay_us(uint32 us)
 /*
  * delay ms
  */
-void seeed_hal_delay_ms(uint32 ms)
+void suli_delay_ms(uint32 ms)
 {
     delay(ms);
 }
@@ -133,7 +133,7 @@ void seeed_hal_delay_ms(uint32 ms)
  * Returns the number of milliseconds since your board began running the current program. 
  * This number will overflow (go back to zero), after approximately 50 days.
  */
-uint32 seeed_hal_millis()
+uint32 suli_millis()
 {
     return millis();
 }
@@ -144,7 +144,7 @@ uint32 seeed_hal_millis()
  * This number will overflow (go back to zero), after approximately 70 minutes.
  * Note: there are 1,000 microseconds in a millisecond and 1,000,000 microseconds in a second.
  */
-uint32 seeed_hal_micros()
+uint32 suli_micros()
 {
     return millis();
 }
@@ -153,7 +153,7 @@ uint32 seeed_hal_micros()
 /*
  * I2C interface initialize. 
  */
-void seeed_hal_i2c_init(void * i2c_device)
+void suli_i2c_init(void * i2c_device)
 {
     ((TwoWire*)i2c_device) -> begin();
 }
@@ -166,7 +166,7 @@ void seeed_hal_i2c_init(void * i2c_device)
  * - data: data buff
  * - len: data lenght
  */
-uint8 seeed_hal_i2c_write(void * i2c_device, uint8 dev_addr, uint8 *data, uint8 len)
+uint8 suli_i2c_write(void * i2c_device, uint8 dev_addr, uint8 *data, uint8 len)
 {
     dev_addr = dev_addr>>1;
     
@@ -189,7 +189,7 @@ uint8 seeed_hal_i2c_write(void * i2c_device, uint8 dev_addr, uint8 *data, uint8 
  * - len: data lenght
  * return
  */
-uint8 seeed_hal_i2c_read(void * i2c_device, uint8 dev_addr, uint8 *buff, uint8 *len)
+uint8 suli_i2c_read(void * i2c_device, uint8 dev_addr, uint8 *buff, uint8 *len)
 {
     dev_addr = dev_addr>>1;
     ((TwoWire*)i2c_device) -> requestFrom(dev_addr, *len);
@@ -215,7 +215,7 @@ uint8 seeed_hal_i2c_read(void * i2c_device, uint8 dev_addr, uint8 *buff, uint8 *
  *   uart_num = 3, uart3, Arduino Mega Only
  * - baud： baudrate
  */
-void seeed_hal_uart_init(void * uart_device, int16 uart_num, uint32 baud)
+void suli_uart_init(void * uart_device, int16 uart_num, uint32 baud)
 {
     if(-1 == uart_num)
     {
@@ -254,11 +254,11 @@ void seeed_hal_uart_init(void * uart_device, int16 uart_num, uint32 baud)
  * - *data: buff to sent
  * - len: data length
  */
-void seeed_hal_uart_send(void * uart_device, int16 uart_num, uint8 *data, uint16 len)
+void suli_uart_send(void * uart_device, int16 uart_num, uint8 *data, uint16 len)
 {
     for(int i=0; i<len; i++)
     {
-        seeed_hal_uart_send_byte(uart_device, uart_num, data[i]);
+        suli_uart_send_byte(uart_device, uart_num, data[i]);
     }
 }
 
@@ -266,7 +266,7 @@ void seeed_hal_uart_send(void * uart_device, int16 uart_num, uint8 *data, uint16
 /*
  * seed a byte to uart
  */
-void seeed_hal_uart_send_byte(void * uart_device, int16 uart_num, uint8 data)
+void suli_uart_send_byte(void * uart_device, int16 uart_num, uint8 data)
 {
     if(-1 == uart_num)
     {
@@ -302,7 +302,7 @@ void seeed_hal_uart_send_byte(void * uart_device, int16 uart_num, uint8 data)
 /*
  * read a byte from uart
  */
-uint8 seeed_hal_uart_read_byte(void * uart_device, int16 uart_num)
+uint8 suli_uart_read_byte(void * uart_device, int16 uart_num)
 {
 
     if(-1 == uart_num)
@@ -338,7 +338,7 @@ uint8 seeed_hal_uart_read_byte(void * uart_device, int16 uart_num)
 /*
  * if uart get data, return 1-readable, 0-unreadable
  */
-uint16 seeed_hal_uart_readable(void * uart_device, int16 uart_num)
+uint16 suli_uart_readable(void * uart_device, int16 uart_num)
 {
 
     if(-1 == uart_num)
