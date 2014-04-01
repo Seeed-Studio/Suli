@@ -1,4 +1,4 @@
-What is Suly
+What is Suli
 -----------------
 Sounds like a girl’s name? Actually it means Seeed Unified Library Interface. It’s a big thing on our to-do list in the near future.
 
@@ -13,7 +13,7 @@ And we have been thinking what if there’s a way to make our libraries fit all 
 
 
 <br>
-How does Suly works
+How does Suli works
 ---------------------------
 Have a look at the following image,
 
