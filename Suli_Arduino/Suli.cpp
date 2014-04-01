@@ -83,9 +83,11 @@ int16 suli_pin_read(IO_T *pio)
  * state: type of pulse to read: either HIGH or LOW. (int)
  * timeout (optional): the number of microseconds to wait for the pulse to start; default is one second (unsigned long)
  */
-uint32 suli_pulse_in(uint8 pin, uint8 state, uint32 timeout)
+ 
+ 
+uint32 suli_pulse_insuli_pulse_in(IO_T *pio, uint8 state, uint32 timeout)
 {
-    return pulseIn(pin, state, timeout);
+    return pulseIn(*pio, state, timeout);
 }
 
 
