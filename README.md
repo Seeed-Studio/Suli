@@ -55,40 +55,40 @@ Suli has two files, Suli.h and Suli.cpp(.c). And Suli should implement the follo
 
 **Digital IO Operation:**
 
-	void seeed_hal_pin_init(IO_T *pio, PIN_T pin);      // pin initialize
-	void seeed_hal_pin_dir(IO_T *pio, DIR_T dir);       // set pin direction
-	void seeed_hal_pin_write(IO_T *pio, int16 state);   // write pin
-	int16 seeed_hal_pin_read(IO_T *pio);                // read pin
-	uint16 seeed_hal_pulse_in(IO_T *pio, uint8 state, uint32 timeout);
+	void suli_pin_init(IO_T *pio, PIN_T pin);      // pin initialize
+	void suli_pin_dir(IO_T *pio, DIR_T dir);       // set pin direction
+	void suli_pin_write(IO_T *pio, int16 state);   // write pin
+	int16 suli_pin_read(IO_T *pio);                // read pin
+	uint16 suli_pulse_in(IO_T *pio, uint8 state, uint32 timeout);
 
 **Analog IO Operation:**
 
-	void seeed_hal_analog_init(ANALOG_T * aio, PIN_T pin);
-	int16 seeed_hal_analog_read(ANALOG_T * aio);
+	void suli_analog_init(ANALOG_T * aio, PIN_T pin);
+	int16 suli_analog_read(ANALOG_T * aio);
 
 **Delay:**
 
-	void seeed_hal_delay_us(uint32 us);                 // delay us
-	void seeed_hal_delay_ms(uint32 ms);                 // delay ms
+	void suli_delay_us(uint32 us);                 // delay us
+	void suli_delay_ms(uint32 ms);                 // delay ms
 
 **Times:**
 
-	uint32 seeed_hal_millis(void);
-	uint32 seeed_hal_micros(void);
+	uint32 suli_millis(void);
+	uint32 suli_micros(void);
 
 **I2C Interface:**
 
-	void seeed_hal_i2c_init(void * i2c_device);
-	uint8 seeed_hal_i2c_write(void * i2c_device, uint8 dev_addr, uint8 *data, uint8 len);
-	uint8 seeed_hal_i2c_read(void * i2c_device, uint8 dev_addr, uint8 *buff, uint8 *len);
+	void suli_i2c_init(void * i2c_device);
+	uint8 suli_i2c_write(void * i2c_device, uint8 dev_addr, uint8 *data, uint8 len);
+	uint8 suli_i2c_read(void * i2c_device, uint8 dev_addr, uint8 *buff, uint8 *len);
 
 **UART:**
 
-	void seeed_hal_uart_init(void * uart_device, int16 uart_num, uint32 baud);
-	void seeed_hal_uart_send(void * uart_device, int16 uart_num, uint8 *data, uint16 len);
-	void seeed_hal_uart_send_byte(void * uart_device, int16 uart_num, uint8 data);
-	uint8 seeed_hal_uart_read_byte(void * uart_device, int16 uart_num);
-	uint16 seeed_hal_uart_readable(void * uart_device, int16 uart_num);
+	void suli_uart_init(void * uart_device, int16 uart_num, uint32 baud);
+	void suli_uart_send(void * uart_device, int16 uart_num, uint8 *data, uint16 len);
+	void suli_uart_send_byte(void * uart_device, int16 uart_num, uint8 data);
+	uint8 suli_uart_read_byte(void * uart_device, int16 uart_num);
+	uint16 suli_uart_readable(void * uart_device, int16 uart_num);
 
 You can find that Suli include digital IO operation, analog IO operation, I2C, and Uart function, maybe it’s not very comprehensive, but base on my experience, it’s enought for quite a lot of our libraries, of curse if we find that we need more funciton someday, we’ll add to it. 
 
