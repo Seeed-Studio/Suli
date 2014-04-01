@@ -99,11 +99,7 @@ You can find that Suli include digital IO operation, analog IO operation, I2C, a
 <br>
 What is next
 ---------------------------
-Our plan is to make all Seeed libraries Suli compatible and porting Suli of some common platforms. These platforms will include Arduino, Mbed, Mesh Bee, Raspberry, LaunchPad in the first stage. This work is expected be finished before June. Stay tuned :D
-
-For more information, please refer to https://github.com/Seeed-Studio/Suli
-
-
+Our plan is to make all Seeed libraries Suli compatible and porting Suli of some common platforms. These platforms will include Arduino, Mbed, Mesh Bee, Raspberry, LaunchPad in the first stage. This work is expected be finished before June. Stay tuned
 
 
 
