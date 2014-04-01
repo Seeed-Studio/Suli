@@ -19,7 +19,7 @@ Have a look at the following image,
 
 ![](http://www.seeedstudio.com/wiki/images/b/b1/Suly_layer.jpg)
 
-We can find that there are three layer and the lowest layer is Suli. Then Libray layer, then Application layer. All of our Libary will use Suli only. Thus, for different platform, we can just porting Suli, then the Library can be used. That means different platform has their Suli, Suli for Arudino, Suli for Mbed, Suli for.... 
+We can find that there are four circles and the innermost is HW(hardware). Suli will call resources from HW, such as GPIO, I2C, Timer and UART; then Suli-compatible Library, and then User Application. All of our Libraries will call Suli function only. Thus, for different platforms, we can just port Suli, then the Library can be used. That means different platforms have their Suli, Suli for Arudino, Suli for Mbed, Suli for…. 
 
 Thres are serval points about Suli:
 
@@ -99,7 +99,9 @@ You can find that Suli include digital IO operation, analog IO operation, I2C, a
 <br>
 What is next
 ---------------------------
-Our plan is make all library of Seeed to Suli compatible and porting some common platform Suli, this’s platform will include: Arduino, Mbed, Raspberry, LaunchPad in the first stage. This work may be finished before June. 
+Our plan is to make all Seeed libraries Suli compatible and porting Suli of some common platforms. These platforms will include Arduino, Mbed, Mesh Bee, Raspberry, LaunchPad in the first stage. This work is expected be finished before June. Stay tuned :D
+
+For more information, please refer to https://github.com/Seeed-Studio/Suli
 
 
 
