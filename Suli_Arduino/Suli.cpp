@@ -191,10 +191,10 @@ uint8 suli_i2c_write(void * i2c_device, uint8 dev_addr, uint8 *data, uint8 len)
  * - len: data lenght
  * return
  */
-uint8 suli_i2c_read(void * i2c_device, uint8 dev_addr, uint8 *buff, uint8 *len)
+uint8 suli_i2c_read(void * i2c_device, uint8 dev_addr, uint8 *buff, uint8 len)
 {
     dev_addr = dev_addr>>1;
-    ((TwoWire*)i2c_device) -> requestFrom(dev_addr, *len);
+    ((TwoWire*)i2c_device) -> requestFrom(dev_addr, len);
     
     int sum_len = 0;
     while(((TwoWire*)i2c_device) -> available())
