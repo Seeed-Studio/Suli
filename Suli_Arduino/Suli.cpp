@@ -40,6 +40,7 @@ void suli_pin_init(IO_T *pio, PIN_T pin)
     *pio = pin;
 }
 
+
 /*
  * set IO direction
  * - pio: IO device pointer
@@ -85,7 +86,7 @@ int16 suli_pin_read(IO_T *pio)
  */
  
  
-uint32 suli_pulse_in(IO_T *pio, uint8 state, uint32 timeout)
+uint32 suli_pulse_insuli_pulse_in(IO_T *pio, uint8 state, uint32 timeout)
 {
     return pulseIn(*pio, state, timeout);
 }
@@ -170,7 +171,7 @@ void suli_i2c_init(void * i2c_device)
  */
 uint8 suli_i2c_write(void * i2c_device, uint8 dev_addr, uint8 *data, uint8 len)
 {
-    dev_addr = dev_addr>>1;
+    dev_addr = dev_addr>>1;                                         
     
     ((TwoWire*)i2c_device) -> beginTransmission(dev_addr);          // start 
     for(int i=0; i<len; i++)
@@ -371,3 +372,76 @@ uint16 suli_uart_readable(void * uart_device, int16 uart_num)
 #endif
 
 }
+
+/*
+ * write a float
+ * num - number to write
+ * decimal - x decimal point
+ */
+void suli_uart_write_float(void * uart_device, int16 uart_num, float num, uint8 decimal)
+{
+
+    if(-1 == uart_num)
+    {
+        ((SoftwareSerial *)uart_device) -> print(num, decimal);
+    }
+    else if(0 == uart_num)
+    {
+#if defined(__AVR_ATmega32U4__)
+        Serial1.print(num, decimal);
+#else
+        Serial.print(num, decimal);
+#endif
+    }
+#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+    else if(1 == uart_num)
+    {
+        return Serial1.print(num, decimal);
+    }
+    else if(2 == uart_num)
+    {
+        return Serial2.print(num, decimal);
+    }
+    else if(3 == uart_num)
+    {
+        return Serial3.print(num, decimal);
+    }
+#endif
+}
+
+
+/*
+ * write an integer
+ * num - number to write
+ */
+void suli_uart_write_int(void * uart_device, int16 uart_num, int32 num)
+{
+    if(-1 == uart_num)
+    {
+        ((SoftwareSerial *)uart_device) -> print(num);
+    }
+    else if(0 == uart_num)
+    {
+#if defined(__AVR_ATmega32U4__)
+        Serial1.print(num);
+#else
+        Serial.print(num);
+#endif
+    }
+#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+    else if(1 == uart_num)
+    {
+        return Serial1.print(num);
+    }
+    else if(2 == uart_num)
+    {
+        return Serial2.print(num);
+    }
+    else if(3 == uart_num)
+    {
+        return Serial3.print(num);
+    }
+#endif
+}
+
+
