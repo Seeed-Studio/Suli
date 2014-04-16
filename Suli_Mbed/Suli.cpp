@@ -162,7 +162,7 @@ uint8 suli_i2c_write(void * i2c_device, uint8 dev_addr, uint8 *data, uint8 len)
  */
 uint8 suli_i2c_read(void * i2c_device, uint8 dev_addr, uint8 *buff, uint8 len)
 {
-    uint8 err = ((I2C *)i2c_device)->read(dev_addr, (char*)buff, &len);
+    uint8 err = ((I2C *)i2c_device)->read(dev_addr, (char*)buff, len);
     return err ? 0 : len;
 }
 
@@ -219,4 +219,27 @@ uint8 suli_uart_read_byte(void * uart_device, int16 uart_num)
 uint16 suli_uart_readable(void * uart_device, int16 uart_num)
 {
     return ((Serial*)uart_device) -> readable();
+}
+
+
+/*
+ * write a float
+ * num - number to write
+ * decimal - x decimal point
+ */
+void suli_uart_write_float(void * uart_device, int16 uart_num, float num, uint8 decimal)
+{
+    char str[5];
+    sprintf(str,"%%.%df", decimal);
+    ((Serial*)uart_device) -> printf(str, num);
+}
+
+
+/*
+ * write an integer
+ * num - number to write
+ */
+void suli_uart_write_int(void * uart_device, int16 uart_num, int32 num)
+{
+    ((Serial*)uart_device) -> printf("%ld", num);
 }

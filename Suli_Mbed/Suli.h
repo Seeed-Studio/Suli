@@ -2,10 +2,16 @@
   seeed_unified_library_interface.h
   Seeed Unified Library Interface for Mbed
   
-  2013 Copyright (c) Seeed Technology Inc.  All right reserved.
+  2014 Copyright (c) Seeed Technology Inc.  All right reserved.
 
   Author:Loovee
-  2013-3-31
+  2014-3-7 - Create File
+  2014-3-11 - I2C test ok
+  2014-3-14 - UART test ok
+
+  2014-4-16 - UART add functions:
+  suli_uart_write_float()
+  suli_uart_write_int()
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
@@ -173,5 +179,20 @@ uint8 suli_uart_read_byte(void * uart_device, int16 uart_num);
  * if uart get data, return 1-readable, 0-unreadable
  */
 uint16 suli_uart_readable(void * uart_device, int16 uart_num);
+
+
+/*
+ * write a float
+ * num - number to write
+ * decimal - x decimal point
+ */
+void suli_uart_write_float(void * uart_device, int16 uart_num, float num, uint8 decimal);
+
+
+/*
+ * write an integer
+ * num - number to write
+ */
+void suli_uart_write_int(void * uart_device, int16 uart_num, int32 num);
 
 #endif

@@ -194,6 +194,4 @@ void suli_uart_write_float(void * uart_device, int16 uart_num, float num, uint8 
 void suli_uart_write_int(void * uart_device, int16 uart_num, int32 num);
 
 
-// todo: print float, print int...and so on
-
 #endif
