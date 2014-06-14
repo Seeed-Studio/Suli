@@ -112,6 +112,7 @@ Now we have Suli for Arduno, Mbed and JN516x, and we will have Suli for many pla
 You can download Suli for your platform. Then the thing left is easy. 
 
 
+Click [here](http://www.seeedstudio.com/wiki/How_to_Use_a_Suli-Compatible_Library) for more details.
 
 <br>
 What is next
