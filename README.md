@@ -94,6 +94,23 @@ You can find that Suli include digital IO operation, analog IO operation, I2C, a
 
 
 
+How to use a Suli-Compatible Library
+---------------------------
+We'll provide more and more Suli-Compatible Library, and we believe that all Seeed's Library will be Suli-Compatible in the short future.
+
+Frst of all, you should download a a Suli-Compatible Library. For example, there's a [ACC_Adxl345_Suli](https://github.com/Seeed-Studio/ACC_Adxl345_Suli)
+
+Then, for different platform there are different operation. 
+
+**For Arduino**
+
+For Arduino Users, use a Suli-Compatible Library is just like you use the other library. What is different is you should put Sul_Arduino to your Library folder, Remember, just Suli_Arduino.
+
+**For Other**
+
+Now we have Suli for Arduno, Mbed and JN516x, and we will have Suli for many platform.
+You can download Suli for your platform. Then the thing left is easy. 
+
 
 
 <br>
