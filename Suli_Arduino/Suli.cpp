@@ -86,7 +86,7 @@ int16 suli_pin_read(IO_T *pio)
  */
  
  
-uint32 suli_pulse_insuli_pulse_in(IO_T *pio, uint8 state, uint32 timeout)
+uint32 suli_pulse_in(IO_T *pio, uint8 state, uint32 timeout)
 {
     return pulseIn(*pio, state, timeout);
 }
