@@ -12,7 +12,7 @@
  */
 void suli_pin_init(IO_T *pio, PIN_T pin)
 {
-    gpio_init(pio, PIN_INPUT);
+    gpio_init(pio, pin);
 }
 
 
