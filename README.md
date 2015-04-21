@@ -21,7 +21,7 @@ Suli2在mbed平台的使用: 建议将所有库文件放在一级目录, 只保�
 APIs 
 ---------------------------
 
-** IO related APIs **
+**IO related APIs**
 
 	void suli_pin_init(IO_T *, PIN_T, PIN_DIR)	
 	void suli_pin_dir(IO_T *, PIN_DIR )
