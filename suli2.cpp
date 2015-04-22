@@ -137,7 +137,7 @@ int suli_uart_read_bytes_timeout(UART_T *uart, uint8_t *buff, int len, int timeo
 //---------------------------------------------arduino---------------------------------------------
 #elif defined(ARDUINO)
 
-
+#if  defined (ARDUINO_USE_I2C)
 /**
  * I2C interface initialize.
  */
@@ -191,10 +191,12 @@ uint8_t suli_i2c_read(I2C_T *i2c_device, uint8_t dev_addr, uint8_t *buff, int le
     return sum_len;
 }
 
+#endif
+
 /**
  * void suli_uart_init(UART_T *, int pin_tx, int pin_rx, uint32_t baud)
  */
-#if defined(ARDUINO_SOFTWARE_SERIAL)
+#if defined(ARDUINO_USE_SOFTWARE_SERIAL)
 #include "SoftwareSerial.h"
 #endif
 

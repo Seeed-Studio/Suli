@@ -80,6 +80,8 @@ PWM_T * : Output, need to use the unified PWM_T type.
 	uint8_t suli_i2c_write(I2C_T *i2c_device, uint8_t dev_addr, uint8_t *data, int len)
 	uint8_t suli_i2c_read(I2C_T *i2c_device, uint8_t dev_addr, uint8_t *buff, int len)
 
+Note: For Arduino, if users need to use i2c APIs, they should define the `ARDUINO_USE_I2C` macro and include "Wire.h" in the sketchbook.
+
 **UART related APIs**
 
 	void suli_uart_init(UART_T *, int pin_tx, int pin_rx, uint32_t baud)
@@ -92,7 +94,7 @@ PWM_T * : Output, need to use the unified PWM_T type.
 	int suli_uart_read_bytes_timeout(UART_T *uart, uint8_t *buff, int len, int timeout_ms=1000)
 	int suli_uart_readable(UART_T *uart)
 
-Note: The UART APIs for Arduino platform supports software serial. If users need to use software serial, they should define the `ARDUINO_SOFTWARE_SERIAL` macro and include "SoftwareSerial.h" in the sketchbook.
+Note: The UART APIs for Arduino platform supports software serial. If users need to use software serial, they should define the `ARDUINO_USE_SOFTWARE_SERIAL` macro and include "SoftwareSerial.h" in the sketchbook.
 
 
 Any questions please email author xuguang.shao@seeed.cc

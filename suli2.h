@@ -319,7 +319,7 @@ inline uint8_t suli_i2c_read(I2C_T *i2c_device, uint8_t dev_addr, uint8_t *buff,
 
 
 //-------------- Arduino ---------------
-#elif defined(ARDUINO)
+#elif defined(ARDUINO) && defined (ARDUINO_USE_I2C)
 
 #include <Wire.h>
 
