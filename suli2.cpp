@@ -229,9 +229,9 @@ void suli_uart_init(UART_T *uart, int pin_tx, int pin_rx, uint32_t baud)
 #if defined(ARDUINO_SOFTWARE_SERIAL)
     else
     {
-        SoftwareSerial ser = SoftwareSerial(pin_rx, pin_tx);
-        *uart = &ser;
-        ser.begin(baud);
+        SoftwareSerial *ser = new SoftwareSerial(pin_rx, pin_tx);
+        *uart = ser;
+        ser->begin(baud);
     }
 #endif
 #endif

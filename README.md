@@ -58,8 +58,8 @@ PWM_T * : Output, need to use the unified PWM_T type.
 
 **Time related APIs**
 
-	void suli_delay_us(uint32 us)
-	void suli_delay_ms(uint32 ms)
+	void suli_delay_us(uint32_t us)
+	void suli_delay_ms(uint32_t ms)
 	uint32 suli_millis(void)
 	uint32 suli_micros(void)
 
