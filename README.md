@@ -81,6 +81,7 @@ PWM_T * : Output, need to use the unified PWM_T type.
 	int suli_uart_read_bytes_timeout(UART_T *uart, uint8_t *buff, int len, int timeout_ms=1000)
 	int suli_uart_readable(UART_T *uart)
 
+Note: The UART APIs for Arduino platform supports software serial. If users need to use software serial, they should define the `ARDUINO_SOFTWARE_SERIAL` macro and include "SoftwareSerial.h" in the sketchbook.
 
 
 Any questions please email author xuguang.shao@seeed.cc
