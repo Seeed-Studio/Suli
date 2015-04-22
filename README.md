@@ -20,6 +20,17 @@ Suli2在mbed平台的使用: 建议将所有库文件放在一级目录, 只保�
 <br>
 APIs 
 ---------------------------
+**Note for all APIs**
+
+The 1st parameter should be the pointer of the XXX_T global variable.
+
+e.g. to use suli_pin_init(IO_T *pio, int pin, int dir)
+
+Firstly, users need to declare a global variable: IO_T io
+
+Secondly, users should pass the pointer of io into suli_pin_init: suli_pin_init(&io, P0_0, SULI_INPUT)
+
+So one thing should be keep in mind: the first parameter of every API is a pointer.
 
 **IO related APIs**
 
@@ -60,8 +71,8 @@ PWM_T * : Output, need to use the unified PWM_T type.
 
 	void suli_delay_us(uint32_t us)
 	void suli_delay_ms(uint32_t ms)
-	uint32 suli_millis(void)
-	uint32 suli_micros(void)
+	uint32_t suli_millis(void)
+	uint32_t suli_micros(void)
 
 **I2C Interface related APIs**
 
