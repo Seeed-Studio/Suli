@@ -396,15 +396,15 @@ void suli_uart_write_float(void * uart_device, int16 uart_num, float num, uint8 
 #if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
     else if(1 == uart_num)
     {
-        return Serial1.print(num, decimal);
+        Serial1.print(num, decimal);
     }
     else if(2 == uart_num)
     {
-        return Serial2.print(num, decimal);
+        Serial2.print(num, decimal);
     }
     else if(3 == uart_num)
     {
-        return Serial3.print(num, decimal);
+        Serial3.print(num, decimal);
     }
 #endif
 }
