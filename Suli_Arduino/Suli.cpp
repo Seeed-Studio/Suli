@@ -431,15 +431,15 @@ void suli_uart_write_int(void * uart_device, int16 uart_num, int32 num)
 #if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
     else if(1 == uart_num)
     {
-        return Serial1.print(num);
+        Serial1.print(num);
     }
     else if(2 == uart_num)
     {
-        return Serial2.print(num);
+        Serial2.print(num);
     }
     else if(3 == uart_num)
     {
-        return Serial3.print(num);
+        Serial3.print(num);
     }
 #endif
 }
